@@ -34,7 +34,7 @@ jobs:
 
     steps:
     - name: Disk Space Optimizer
-    uses: hugoalh/disk-space-optimizer-ghaction@v0.8.1
+      uses: hugoalh/disk-space-optimizer-ghaction@v0.8.1
             
     - name: Checkout
       uses: actions/checkout@main
