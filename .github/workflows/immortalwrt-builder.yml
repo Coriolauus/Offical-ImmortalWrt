@@ -55,7 +55,8 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-          sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+          sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL /etc/mysql /etc/php
+          sudo -E apt-get -y purge azure-cli* docker* ghc* zulu* hhvm* firefox* google* dotnet* aspnetcore* powershell* openjdk* adoptopenjdk* mysql* php* mongodb* moby* snap* || true
           sudo docker image prune --all --force
           sudo bash -c "curl -skL https://raw.githubusercontent.com/sbwml/actions/openwrt-build-setup/sources-24.04.list > /etc/apt/sources.list"
           sudo add-apt-repository ppa:longsleep/golang-backports
